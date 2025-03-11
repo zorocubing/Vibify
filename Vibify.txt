@@ -1,0 +1,208 @@
+﻿Vibify
+Custom music player that plays from your Spotify account
+
+
+
+
+Plan
+
+
+1. Link Spotify API and install Python libraries
+2. Design UI in Figma
+3. Build the Python music player app
+4. Testing
+5. Packaging
+6. Set up Github repository
+7. Build the website with the download link
+8. Final amendments and share to public on X
+
+
+Details
+Step 1: Define Scope and Features
+
+
+* Goal: A Python music player that connects to Spotify, controls playback, and has a custom UI.
+* 
+Core Features:
+
+   * Link Spotify account (user logs in via OAuth).
+   * 
+Play, pause, skip tracks.
+   * 
+Display current track info (song name, artist, album art).
+   * 
+Basic playlist browsing.
+      * 
+Stretch Goals (optional later):
+
+         * Queue management.
+         * 
+Volume control.
+         * 
+Offline mode (tricky with Spotify, might need rethinking).
+            * 
+Why: Start simple to ensure success, then expand. Focus on authentication and playback first.
+Step 2: Research and Tools
+
+
+               * Spotify API:
+
+                  * Sign up for a Spotify Developer account at developer.spotify.com.
+                  * 
+Create an app in the dashboard to get a Client ID and Client Secret.
+                  * 
+Study the Web API docs—focus on Authentication (OAuth 2.0) and Playback endpoints.
+                  * 
+Note: Playback requires the Web Playback SDK or Spotipy with Premium.
+                     * 
+Python Libraries:
+
+                        * Spotipy: Lightweight Spotify API wrapper for Python. Handles auth and API calls.
+                        * 
+Tkinter or PyQt: For the app’s GUI. Tkinter’s simpler and built-in; PyQt’s more polished but needs installation.
+                        * 
+PyInstaller: To package your app into a .exe or .app file.
+                        * 
+Requests: For HTTP calls (if not using Spotipy).
+                           * 
+Figma: Design UI for both the app and website.
+                           * 
+Web Dev: HTML, CSS, JS for the site—keep it static for GitHub Pages.
+                           * 
+Git: Version control and hosting.
+Step 3: Design the UI in Figma
+
+
+                              * App UI:
+
+                                 * Layout: Player controls (play/pause/skip), track info display, login button, playlist sidebar.
+                                 * 
+Style: Clean, modern, maybe a dark theme (Spotify vibes but unique).
+                                 * 
+Export assets (icons, backgrounds) for Python integration.
+                                    * 
+Website UI:
+
+                                       * Sections: Hero (app pitch), Features, Download button, GitHub link, About.
+                                       * 
+Style: Simple, bold, responsive (mobile-friendly).
+                                          * 
+Why Figma: Keeps your design original and gives you a visual blueprint before coding.
+Step 4: Build the Python Music Player
+
+
+                                             * Phase 1: Spotify Authentication:
+
+                                                * Use Spotipy’s OAuth flow. User logs in via a browser popup, you get an access token.
+                                                * 
+Store the token securely (e.g., in memory or a config file).
+                                                   * 
+Phase 2: Playback Functionality:
+
+                                                      * Use Spotipy to fetch current track, play/pause, skip.
+                                                      * 
+Test with your own Spotify account first.
+                                                      * 
+Note: Playback needs a Premium account and a “device” (your app can act as one with the SDK).
+                                                         * 
+Phase 3: GUI Development:
+
+                                                            * Build the interface with Tkinter or PyQt based on your Figma design.
+                                                            * 
+Add buttons for controls, labels for track info, and an image widget for album art.
+                                                               * 
+Phase 4: Testing:
+
+                                                                  * Run it locally, ensure auth and playback work.
+                                                                  * 
+Debug crashes or API errors (Spotify’s API has rate limits—handle them).
+Step 5: Package the App
+
+
+                                                                     * Tool: PyInstaller.
+                                                                     * 
+Process:
+
+                                                                        * Install: pip install pyinstaller.
+                                                                        * 
+Run: pyinstaller --onefile your_script.py to create a single executable.
+                                                                        * 
+Include assets (icons, UI images) with --add-data.
+                                                                           * 
+Test: Run the .exe on your PC, then on a friend’s to confirm it works standalone.
+                                                                           * 
+Challenges: Spotify auth might need a browser redirect—ensure it’s smooth in the packaged app.
+Step 6: Set Up GitHub Repository
+
+
+                                                                              * Create a new repo on GitHub (e.g., Vibify).
+                                                                              * 
+Structure:
+
+                                                                                 * /src: Python code and assets.
+                                                                                 * 
+/docs: README, license, instructions.
+                                                                                 * 
+/website: HTML/CSS/JS files for GitHub Pages.
+                                                                                    * 
+Add a README with setup steps, screenshots, and your vision.
+                                                                                    * 
+License it (e.g., MIT) for open-source sharing.
+Step 7: Build the Website
+
+
+                                                                                       * HTML: Structure with a header, download section, footer.
+                                                                                       * 
+CSS: Style based on Figma—responsive, clean, eye-catching.
+                                                                                       * 
+JS: Add interactivity (e.g., smooth scroll, download button animation).
+                                                                                       * 
+Download Link: Host the packaged .exe in the repo’s Releases section, link it on the site.
+                                                                                       * 
+Test Locally: Use a local server (e.g., python -m http.server) before pushing.
+Step 8: Host on GitHub Pages
+
+
+                                                                                          * Push the /website folder to a gh-pages branch or set it as the docs folder.
+                                                                                          * 
+Enable GitHub Pages in repo settings.
+                                                                                          * 
+Visit yourusername.github.io/SpotifyMusicPlayer to confirm it’s live.
+                                                                                          * 
+Update the download link to point to the latest release.
+Step 9: Final Touches
+
+
+                                                                                             * Test End-to-End: Link Spotify, run the app, visit the site, download, and run again.
+                                                                                             * 
+Polish: Tweak UI based on feedback, fix bugs.
+                                                                                             * 
+Share: Post on X, forums, or with friends to get users!
+Notes 
+
+
+
+
+
+
+
+
+Links
+
+
+Web API | Spotify for Developers Spotify Web API make the app work
+
+
+https://spotipy.readthedocs.io/en/2.25.1/ Spotipy library link Spotify API
+
+
+https://docs.python.org/3/library/os.html os module file handling
+
+
+https://docs.python.org/3/library/webbrowser.html web browser module open the URL
+
+
+https://docs.python.org/3/library/http.server.html http server module catching the redirect
+
+
+https://docs.python.org/3/library/urllib.parse.html URLLIB Parsing the redirect url module
