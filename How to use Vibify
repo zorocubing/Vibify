@@ -1,0 +1,9 @@
+To use Vibify:
+1. Download and run the app.
+2. Get your Spotify Client ID and Secret:
+   - Go to https://developer.spotify.com/dashboard/
+   - Create an app (e.g., "Vibify").
+   - Copy Client ID and Client Secret.
+   - Set Redirect URI to http://localhost:8888 in your app settings.
+3. Enter these when prompted by the app.
+4. Enjoy!
